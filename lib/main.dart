@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:guardiian/constants/routes.dart';
+import 'package:guardiian/screens/permission.dart';
+import 'package:guardiian/screens/wallet_creation/authentication_page.dart';
+import 'package:guardiian/screens/wallet_creation/create_password.dart';
+import 'package:guardiian/screens/wallet_creation/generate_mnemonics_page.dart';
+import 'package:guardiian/screens/wallet_creation/importing_loading_page.dart';
+import 'package:guardiian/screens/wallet_creation/importing_mainnet_page.dart';
+import 'package:guardiian/screens/wallet_creation/secureWallet_page.dart';
+import 'package:guardiian/screens/wallet_creation/transcribe_mnemonics_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,60 +19,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Guardiian',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const PermissionPage(),
+      routes: {
+        routeCreatePassword: (context) => const CreatePassword(),
+        routeAuthenticationPage: (context) => const AuthenticationPage(),
+        routeSecureWalletPage: (context) => const SecureWalletPage(),
+        routeGenerateMnemonicsPage: (context) => const GenerateMnemonicsPage(),
+        routeTranscribeMnemonicsPage: (context) =>
+            const TranscribeMnemonicsPage(),
+        routeImportingMainnetPage: (context) => const ImportingMainnetPage(),
+        routeMainnetImportingLoadingPage: (context) =>
+            const MainnetImportingLoadingPage(),
+      },
     );
   }
 }
