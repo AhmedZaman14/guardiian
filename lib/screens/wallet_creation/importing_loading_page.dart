@@ -61,8 +61,8 @@ class _MainnetImportingLoadingPageState
               onPressed: () {
                 Navigator.pushNamed(context, routeImportingMainnetPage);
               },
-              child:
-                  Text('click this to go to next page this is just temporary'))
+              child: const Text(
+                  'click this to go to next page this is just temporary'))
         ],
       ),
     );

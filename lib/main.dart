@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:guardiian/constants/colors.dart';
 import 'package:guardiian/constants/routes.dart';
+import 'package:guardiian/screens/buy_crypto_page.dart';
+import 'package:guardiian/screens/home_screen.dart';
+import 'package:guardiian/screens/notificatons_page.dart';
 import 'package:guardiian/screens/permission.dart';
+import 'package:guardiian/screens/search_crypto_page.dart';
+import 'package:guardiian/screens/wallet_creation/add_mainnet_page.dart';
 import 'package:guardiian/screens/wallet_creation/authentication_page.dart';
 import 'package:guardiian/screens/wallet_creation/create_password.dart';
 import 'package:guardiian/screens/wallet_creation/generate_mnemonics_page.dart';
 import 'package:guardiian/screens/wallet_creation/importing_loading_page.dart';
 import 'package:guardiian/screens/wallet_creation/importing_mainnet_page.dart';
-import 'package:guardiian/screens/wallet_creation/secureWallet_page.dart';
+import 'package:guardiian/screens/wallet_creation/secure_wallet_page.dart';
 import 'package:guardiian/screens/wallet_creation/transcribe_mnemonics_page.dart';
 
 void main() {
@@ -22,7 +28,7 @@ class MyApp extends StatelessWidget {
       title: 'Guardiian',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: prim),
         useMaterial3: true,
       ),
       home: const PermissionPage(),
@@ -36,6 +42,11 @@ class MyApp extends StatelessWidget {
         routeImportingMainnetPage: (context) => const ImportingMainnetPage(),
         routeMainnetImportingLoadingPage: (context) =>
             const MainnetImportingLoadingPage(),
+        routeAddMainnetPage: (context) => const AddMainnetPage(),
+        routeWalletHomeScreen: (context) => WalletHomeScreen(),
+        routeNotificationPage: (context) => const NotificationsPage(),
+        routeSearchCryptoPage: (context) => const SearchCryptoPage(),
+        routeBuyCryptoPage: (context) => const BuyCryptoPage(),
       },
     );
   }

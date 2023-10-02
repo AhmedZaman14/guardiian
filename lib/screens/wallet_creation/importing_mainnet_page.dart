@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guardiian/constants/routes.dart';
 
 class ImportingMainnetPage extends StatefulWidget {
   const ImportingMainnetPage({super.key});
@@ -142,7 +143,7 @@ class _ImportingMainnetPageState extends State<ImportingMainnetPage> {
               width: MediaQuery.of(context).size.width * 0.8,
               child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.pushNamed(context, routeGenerateMnemonicsPage);
+                  Navigator.pushNamed(context, routeAddMainnetPage);
                 },
                 style: ElevatedButton.styleFrom(
                   // padding: const EdgeInsets.symmetric(horizontal: 34),
@@ -156,7 +157,7 @@ class _ImportingMainnetPageState extends State<ImportingMainnetPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             )
           ],
