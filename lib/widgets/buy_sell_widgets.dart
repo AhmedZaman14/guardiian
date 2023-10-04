@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:guardiian/constants/routes.dart';
+import 'package:guardiian/widgets/back_button.dart';
 
 import '../constants/colors.dart';
 
@@ -85,6 +87,122 @@ Widget cononectContainer() {
                 ),
               )
             ],
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+Widget spendContainer(BuildContext context) {
+  return Container(
+    width: MediaQuery.of(context).size.width * 0.8,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      color: prim.withOpacity(0.12),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          CircularButton(
+            color: prim,
+            icon: Icons.attach_money_outlined,
+            onPressed: () {},
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Spend',
+                style: TextStyle(fontSize: 16),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, routeCurrencyPreferencePage);
+                },
+                child: const Row(
+                  children: [
+                    Text(
+                      'USD',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Icon(Icons.arrow_drop_down),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          const Expanded(
+            child: Text(
+              '200',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+Widget payWithContainer(BuildContext context) {
+  return Container(
+    width: MediaQuery.of(context).size.width * 0.8,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      color: prim.withOpacity(0.12),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          CircularButton(
+            color: prim,
+            icon: Icons.credit_card,
+            onPressed: () {},
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Pay with',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  'Select a payment method',
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Icon(
+            Icons.keyboard_arrow_right_rounded,
+            size: 30,
           )
         ],
       ),

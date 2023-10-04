@@ -1,261 +1,169 @@
 import 'package:flutter/material.dart';
+import 'package:guardiian/screens/search_crypto_page.dart';
 
 import '../constants/colors.dart';
 import '../constants/routes.dart';
 import 'back_button.dart';
 
-Widget homeWidgets(
-    BuildContext context, bool isBottomSheetVisible, TabController tabCont) {
-  return NestedScrollView(
-    headerSliverBuilder: (_, __) {
-      return [
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.11,
-            width: double.infinity,
-            child: Image.asset(
-              'assets/images/appbar_img.png',
-              fit: BoxFit.fill,
-            ),
-          ),
-        ),
-        SliverAppBar(
-          expandedHeight: MediaQuery.of(context).size.height * 0.42,
-          backgroundColor: isBottomSheetVisible ? Colors.grey : Colors.white,
-          scrolledUnderElevation: 0.0,
-          elevation: 0,
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.menu,
-              color: prim,
-              size: 25,
-            ),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, routeNotificationPage);
-                },
-                icon: const Icon(
-                  Icons.notifications,
-                  color: prim,
-                ))
-          ],
-          flexibleSpace: FlexibleSpaceBar(
-              background: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: CircleAvatar(
-                    maxRadius: 30,
-                    child: Image.asset('assets/images/logo_img.png')),
-              ),
-              const Text(
-                'My Wallet',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-              ),
-              const Text(
-                "\$0.00",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 5, right: 5, top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'scan',
-                            icon: Icons.qr_code,
-                            color: prim,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Scan',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'send',
-                            icon: Icons.arrow_outward_rounded,
-                            color: prim,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Send',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'recieve',
-                            icon: Icons.arrow_downward,
-                            color: prim,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Receive',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'buy',
-                            icon: Icons.credit_card,
-                            color: prim,
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, routeSearchCryptoPage);
-                            },
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Buy',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'swap',
-                            icon: Icons.swap_horiz_outlined,
-                            color: prim,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Swap',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Transform.scale(
-                          scale: 1.2,
-                          child: CircularButton(
-                            heroTag: 'bridge',
-                            icon: Icons.roller_shades_closed_outlined,
-                            color: prim,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: Text(
-                            'Bridge',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              )
-            ],
-          )),
-          bottom: TabBar(
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicatorColor: prim,
-            labelColor: prim,
-            labelStyle:
-                const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            unselectedLabelStyle:
-                const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            controller: tabCont,
-            tabs: const [
-              Text('Tokens'),
-              Text('NFT'),
-            ],
-          ),
-        ),
-      ];
-    },
-    body: TabBarView(
-      controller: tabCont,
-      children: [
-        ListView.builder(
-          itemBuilder: (context, index) => tokenContainer(),
-          itemCount: 10,
-          shrinkWrap: true,
-        ),
-        Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+Widget flexibleSpace(BuildContext context) {
+  return FlexibleSpaceBar(
+      background: Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: CircleAvatar(
+            maxRadius: 30, child: Image.asset('assets/images/logo_img.png')),
+      ),
+      const Text(
+        'My Wallet',
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+      ),
+      const Text(
+        "\$0.00",
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(left: 5, right: 5, top: 30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              'Collectibles will be here',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-              ),
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'scan',
+                    icon: Icons.qr_code,
+                    color: prim,
+                    onPressed: () {},
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Scan',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
             ),
-            const SizedBox(
-              height: 8,
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'send',
+                    icon: Icons.arrow_outward_rounded,
+                    color: prim,
+                    onPressed: () {},
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Send',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
             ),
-            RichText(
-              text: const TextSpan(
-                text: 'Receive',
-                style: TextStyle(
-                    color: prim, fontSize: 18, fontWeight: FontWeight.w500),
-              ),
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'recieve',
+                    icon: Icons.arrow_downward,
+                    color: prim,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SearchCryptoPage(
+                              nextRoute: 'receive',
+                            ),
+                          ));
+                    },
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Receive',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
             ),
-            const SizedBox(
-              height: 8,
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'buy',
+                    icon: Icons.credit_card,
+                    color: prim,
+                    onPressed: () {
+                      Navigator.pushNamed(context, routeSearchCryptoPage);
+                    },
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Buy',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
             ),
-            RichText(
-              text: const TextSpan(
-                text: 'Open on Opensea.io',
-                style: TextStyle(
-                    color: prim, fontSize: 16, fontWeight: FontWeight.w400),
-              ),
-            )
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'swap',
+                    icon: Icons.swap_horiz_outlined,
+                    color: prim,
+                    onPressed: () {},
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Swap',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: CircularButton(
+                    heroTag: 'bridge',
+                    icon: Icons.roller_shades_closed_outlined,
+                    color: prim,
+                    onPressed: () {},
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Bridge',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
+            ),
           ],
-        )),
-      ],
-    ),
-  );
+        ),
+      )
+    ],
+  ));
 }
 
 Widget showSheet(BuildContext context, Function()? onPressed) {
@@ -310,7 +218,7 @@ Widget showSheet(BuildContext context, Function()? onPressed) {
   );
 }
 
-Widget nevBar() {
+Widget nevBar(Function(int currentIndex) onTap, int currentIndex) {
   return BottomNavigationBar(
     type: BottomNavigationBarType.shifting,
     elevation: 20,
@@ -347,12 +255,8 @@ Widget nevBar() {
         label: 'Discover',
       ),
     ],
-    currentIndex: 0,
-    onTap: (value) {
-      // setState(() {
-      //   currentIndex = value;
-      // });
-    },
+    currentIndex: currentIndex,
+    onTap: onTap,
   );
 }
 

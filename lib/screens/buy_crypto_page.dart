@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:guardiian/widgets/buy_sell_widgets.dart';
 
+import '../constants/routes.dart';
+
 class BuyCryptoPage extends StatefulWidget {
   const BuyCryptoPage({super.key});
 
@@ -16,7 +18,7 @@ class _BuyCryptoPageState extends State<BuyCryptoPage> {
           child: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.11,
+            height: MediaQuery.of(context).size.height * 0.08,
             width: double.infinity,
             child: Image.asset(
               'assets/images/appbar_img.png',
@@ -64,7 +66,7 @@ class _BuyCryptoPageState extends State<BuyCryptoPage> {
             width: MediaQuery.of(context).size.width * 0.75,
             child: ElevatedButton(
               onPressed: () {
-                // Navigator.pushNamed(context, routeCreatePassword);
+                Navigator.pushNamed(context, routeBuyingMethodPage);
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 34),

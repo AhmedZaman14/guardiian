@@ -4,8 +4,10 @@ import 'package:guardiian/widgets/back_button.dart';
 
 import '../constants/routes.dart';
 
+// ignore: must_be_immutable
 class SearchCryptoPage extends StatefulWidget {
-  const SearchCryptoPage({super.key});
+  SearchCryptoPage({super.key, this.nextRoute = 'buy'});
+  String nextRoute;
 
   @override
   State<SearchCryptoPage> createState() => _SearchCryptoPageState();
@@ -18,7 +20,7 @@ class _SearchCryptoPageState extends State<SearchCryptoPage> {
       body: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.11,
+            height: MediaQuery.of(context).size.height * 0.08,
             width: double.infinity,
             child: Image.asset(
               'assets/images/appbar_img.png',
@@ -88,7 +90,9 @@ class _SearchCryptoPageState extends State<SearchCryptoPage> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, routeBuyCryptoPage);
+                    widget.nextRoute == 'buy'
+                        ? Navigator.pushNamed(context, routeBuyCryptoPage)
+                        : Navigator.pushNamed(context, routeReceiveCryptoPage);
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
