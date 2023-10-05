@@ -24,7 +24,9 @@ Widget drawer(BuildContext context) {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, routeWalletPage);
+          },
         ),
         ListTile(
           leading: const Icon(
@@ -92,7 +94,7 @@ Widget drawer(BuildContext context) {
           ),
           title: const Text('Wallet Connect'),
           onTap: () {
-            Navigator.pushNamed(context, routeWalletPage);
+            Navigator.pushNamed(context, routeWalletConnectPage);
           },
         ),
         const Divider(), // Add a divider before the new tiles.

@@ -15,7 +15,7 @@ class TranscribeMnemonicsPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.12,
+              height: MediaQuery.of(context).size.height * 0.08,
               width: double.infinity,
               child: Image.asset(
                 'assets/images/appbar_img.png',

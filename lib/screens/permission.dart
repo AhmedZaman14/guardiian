@@ -13,7 +13,7 @@ class PermissionPage extends StatelessWidget {
           child: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.12,
+            height: MediaQuery.of(context).size.height * 0.08,
             width: double.infinity,
             child: Image.asset(
               'assets/images/appbar_img.png',

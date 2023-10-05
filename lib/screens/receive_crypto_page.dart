@@ -36,7 +36,7 @@ class ReceiveCryptoPage extends StatelessWidget {
                   width: 10,
                 ),
                 const Text(
-                  'Buy BTC',
+                  'Receive BTC',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -47,7 +47,7 @@ class ReceiveCryptoPage extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(15),
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.82,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -65,8 +65,8 @@ class ReceiveCryptoPage extends StatelessWidget {
             ),
             child: Column(children: [
               SizedBox(
-                  height: 150,
-                  width: 150,
+                  height: 170,
+                  width: 170,
                   child: Image.asset('assets/images/qr.png')),
               const SizedBox(
                 height: 6,

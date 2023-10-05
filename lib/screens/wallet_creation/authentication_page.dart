@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:guardiian/constants/routes.dart';
 import 'package:guardiian/widgets/wallet_creation_stepper.dart';
@@ -26,7 +27,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.12,
+            height: MediaQuery.of(context).size.height * 0.08,
             width: double.infinity,
             child: Image.asset(
               'assets/images/appbar_img.png',
@@ -143,22 +144,27 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                      text: authChoice == 1
-                          ? 'Please use fingerprint to login.\n\n'
-                          : 'Please use face recognition to login.\n\n',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                      children: const [
-                        TextSpan(
-                          text: 'PIN',
-                          style: TextStyle(
-                            color: Color(0xFF0000FE),
-                          ),
+                    text: authChoice == 1
+                        ? 'Please use fingerprint to login.\n\n'
+                        : 'Please use face recognition to login.\n\n',
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'PIN',
+                        style: const TextStyle(
+                          color: Color(0xFF0000FE),
                         ),
-                      ]),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(context, routePasscodePage);
+                          },
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

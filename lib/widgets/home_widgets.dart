@@ -5,7 +5,7 @@ import '../constants/colors.dart';
 import '../constants/routes.dart';
 import 'back_button.dart';
 
-Widget flexibleSpace(BuildContext context) {
+Widget flexibleSpace(BuildContext context, Function() swapOnPress) {
   return FlexibleSpaceBar(
       background: Column(
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,7 +57,15 @@ Widget flexibleSpace(BuildContext context) {
                     heroTag: 'send',
                     icon: Icons.arrow_outward_rounded,
                     color: prim,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SearchCryptoPage(
+                              nextRoute: 'send',
+                            ),
+                          ));
+                    },
                   ),
                 ),
                 const Padding(
@@ -127,7 +135,7 @@ Widget flexibleSpace(BuildContext context) {
                     heroTag: 'swap',
                     icon: Icons.swap_horiz_outlined,
                     color: prim,
-                    onPressed: () {},
+                    onPressed: swapOnPress,
                   ),
                 ),
                 const Padding(

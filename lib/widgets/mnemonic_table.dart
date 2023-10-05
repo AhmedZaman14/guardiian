@@ -68,12 +68,15 @@ Widget mnemonicsInput() {
             return Expanded(
               child: Row(
                 children: [
-                  Text(
-                    '$index',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
+                  SizedBox(
+                    width: 30,
+                    child: Text(
+                      '$index',
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                   Expanded(

@@ -8,13 +8,13 @@ import 'package:guardiian/screens/currency_preference_page.dart';
 import 'package:guardiian/screens/home_screen.dart';
 import 'package:guardiian/screens/node_settings_page.dart';
 import 'package:guardiian/screens/notificatons_page.dart';
-import 'package:guardiian/screens/permission.dart';
 import 'package:guardiian/screens/price_alerts_page.dart';
-import 'package:guardiian/screens/push_Notifications_page.dart';
+import 'package:guardiian/screens/push_notifications_page.dart';
 import 'package:guardiian/screens/receive_crypto_page.dart';
 import 'package:guardiian/screens/search_crypto_page.dart';
 import 'package:guardiian/screens/security_page.dart';
 import 'package:guardiian/screens/select_currency_page.dart';
+import 'package:guardiian/screens/send_crypto_page.dart';
 import 'package:guardiian/screens/show_mnemonics_page.dart';
 import 'package:guardiian/screens/swap_page.dart';
 import 'package:guardiian/screens/wallet_creation/add_mainnet_page.dart';
@@ -23,9 +23,12 @@ import 'package:guardiian/screens/wallet_creation/create_password.dart';
 import 'package:guardiian/screens/wallet_creation/generate_mnemonics_page.dart';
 import 'package:guardiian/screens/wallet_creation/importing_loading_page.dart';
 import 'package:guardiian/screens/wallet_creation/importing_mainnet_page.dart';
+import 'package:guardiian/screens/wallet_creation/passcode_page.dart';
 import 'package:guardiian/screens/wallet_creation/secure_wallet_page.dart';
 import 'package:guardiian/screens/wallet_creation/transcribe_mnemonics_page.dart';
 import 'package:guardiian/screens/wallet_screen.dart';
+import 'package:guardiian/screens/wallets_connect_page.dart';
+import 'package:guardiian/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: prim),
         useMaterial3: true,
       ),
-      home: const PermissionPage(),
+      home: const SplashScreen(),
       routes: {
         routeCreatePassword: (context) => const CreatePassword(),
         routeAuthenticationPage: (context) => const AuthenticationPage(),
@@ -72,6 +75,9 @@ class MyApp extends StatelessWidget {
         routeNodeSettingsPage: (context) => const NodeSettingsPage(),
         routeSwapPage: (context) => const SwapPage(),
         routePushNotificationsPage: (context) => const PushNotificationPage(),
+        routePasscodePage: (context) => const PasscodePage(),
+        routeSendCryptoPage: (context) => const SendCryptoPage(),
+        routeWalletConnectPage: (context) => const WalletConnectPage(),
       },
     );
   }

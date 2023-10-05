@@ -92,7 +92,10 @@ class _SearchCryptoPageState extends State<SearchCryptoPage> {
                   onTap: () {
                     widget.nextRoute == 'buy'
                         ? Navigator.pushNamed(context, routeBuyCryptoPage)
-                        : Navigator.pushNamed(context, routeReceiveCryptoPage);
+                        : widget.nextRoute == 'send'
+                            ? Navigator.pushNamed(context, routeSendCryptoPage)
+                            : Navigator.pushNamed(
+                                context, routeReceiveCryptoPage);
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
