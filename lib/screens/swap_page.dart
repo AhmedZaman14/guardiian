@@ -123,8 +123,9 @@ Widget swapBody(BuildContext context) {
         const SizedBox(
           height: 10,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
           children: [
             percentContainer('25%', () {}),
             percentContainer('50%', () {}),

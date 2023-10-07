@@ -39,37 +39,39 @@ class _SearchCryptoPageState extends State<SearchCryptoPage> {
                       Navigator.pop(context);
                     }),
                 const SizedBox(width: 10),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 40,
-                  child: TextField(
-                    textInputAction: TextInputAction.search,
-                    style: const TextStyle(fontSize: 15),
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: const BorderSide(color: prim, width: 0.7),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: const BorderSide(color: prim, width: 0.7),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: const BorderSide(color: prim, width: 0.7),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 0),
-                      hintText: 'Search',
-                      hintStyle: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      ),
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: Colors.grey,
+                Expanded(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: 40,
+                    child: TextField(
+                      textInputAction: TextInputAction.search,
+                      style: const TextStyle(fontSize: 15),
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: const BorderSide(color: prim, width: 0.7),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: const BorderSide(color: prim, width: 0.7),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: const BorderSide(color: prim, width: 0.7),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 0),
+                        hintText: 'Search',
+                        hintStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.search,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
                   ),

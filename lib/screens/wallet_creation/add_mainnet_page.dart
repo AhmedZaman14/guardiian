@@ -165,7 +165,7 @@ class _AddMainnetPageState extends State<AddMainnetPage> {
                   backgroundColor: const Color(0xFF0000FE),
                 ),
                 child: const Text(
-                  'Generate',
+                  'Confirm',
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.w500),
                 ),

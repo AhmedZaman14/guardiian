@@ -85,6 +85,7 @@ Widget mnemonicsInput() {
                       child: SizedBox(
                         height: 30,
                         child: TextField(
+                          textInputAction: TextInputAction.next,
                           style: const TextStyle(fontSize: 15),
                           decoration: InputDecoration(
                             // labelText: '$index',

@@ -122,9 +122,12 @@ class _SecurityPageState extends State<SecurityPage> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Row(
                 children: [
-                  const Text(
-                    'Auto-Lock immediate',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  const Expanded(
+                    child: Text(
+                      'Auto-Lock immediate',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
                   ),
                   const Spacer(),
                   Transform.scale(
@@ -168,9 +171,12 @@ class _SecurityPageState extends State<SecurityPage> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Row(
                 children: [
-                  const Text(
-                    'Transaction Signing',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                  const Expanded(
+                    child: Text(
+                      'Transaction Signing',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                    ),
                   ),
                   const Spacer(),
                   Transform.scale(

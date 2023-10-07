@@ -66,6 +66,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             height: 10,
           ),
           Container(
+            padding: const EdgeInsets.all(20),
             // height: 200,
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
@@ -104,7 +105,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Transform.scale(
-                      scale: 1.2,
+                      scale: 1.5,
                       child: CircularButton(
                         heroTag: 'fingerprint',
                         color: authChoice == 1
@@ -119,10 +120,10 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                       ),
                     ),
                     const SizedBox(
-                      width: 15,
+                      width: 25,
                     ),
                     Transform.scale(
-                      scale: 1.2,
+                      scale: 1.5,
                       child: CircularButton(
                         heroTag: 'faceRecognition',
                         color: authChoice == 2

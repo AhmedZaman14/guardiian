@@ -56,21 +56,18 @@ class _AddMainnetContainerState extends State<AddMainnetContainer> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                Expanded(
                   child: Image.asset(
                     widget.mainnetImg,
                     height: 35,
                     width: 35,
                   ),
                 ),
-                Expanded(
-                  child: Text(
-                    widget.mainnetName,
-                    maxLines: 1,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w400, fontSize: 12),
-                  ),
+                Text(
+                  widget.mainnetName,
+                  maxLines: 1,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 12),
                 ),
               ],
             ),

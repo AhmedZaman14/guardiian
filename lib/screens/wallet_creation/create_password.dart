@@ -188,21 +188,23 @@ class _CreatePasswordState extends State<CreatePassword> {
                   style: TextStyle(color: Colors.grey.shade600),
                 ),
                 const Spacer(),
-                Transform.scale(
-                  scale: 0.7,
-                  child: Switch(
-                    inactiveThumbColor: const Color(0xFF0000FE),
-                    activeColor: const Color(0xFF0000FE),
-                    activeTrackColor: const Color(0xFFB3B3FF),
-                    inactiveTrackColor: const Color(0xFFB3B3FF),
-                    value: unlockWithFingure,
-                    onChanged: (bool newValue) {
-                      setState(() {
-                        unlockWithFingure = newValue;
-                      });
-                    },
-                    splashRadius: 18.0,
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                Expanded(
+                  child: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+                      inactiveThumbColor: const Color(0xFF0000FE),
+                      activeColor: const Color(0xFF0000FE),
+                      activeTrackColor: const Color(0xFFB3B3FF),
+                      inactiveTrackColor: const Color(0xFFB3B3FF),
+                      value: unlockWithFingure,
+                      onChanged: (bool newValue) {
+                        setState(() {
+                          unlockWithFingure = newValue;
+                        });
+                      },
+                      splashRadius: 18.0,
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
                   ),
                 ),
               ],

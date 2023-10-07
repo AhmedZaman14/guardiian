@@ -30,11 +30,13 @@ class PermissionPage extends StatelessWidget {
                     icon: Icons.arrow_back_ios_new,
                     onPressed: () {}),
                 const SizedBox(width: 10),
-                const Text(
-                  'Help Us Improve Guardiian',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                const Expanded(
+                  child: Text(
+                    'Help Us Improve Guardiian',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -180,43 +182,51 @@ class PermissionPage extends StatelessWidget {
                 ])),
           ),
           const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.white,
-                  side: const BorderSide(
-                    color: Color(0xFF0000FE),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.white,
+                      side: const BorderSide(
+                        color: Color(0xFF0000FE),
+                      ),
+                    ),
+                    child: const Text(
+                      'No Thanks',
+                      style: TextStyle(
+                          color: Color(0xFF0000FE),
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-                child: const Text(
-                  'No Thanks',
-                  style: TextStyle(
-                      color: Color(0xFF0000FE), fontWeight: FontWeight.bold),
-                ),
-              ),
-              const SizedBox(width: 10),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, routeCreatePassword);
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 34),
-                  elevation: 0,
-                  backgroundColor: const Color(0xFF0000FE),
-                ),
-                child: const Text(
-                  'I Agree',
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w500),
-                ),
-              )
-            ],
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, routeCreatePassword);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 34),
+                      elevation: 0,
+                      backgroundColor: const Color(0xFF0000FE),
+                    ),
+                    child: const Text(
+                      'I Agree',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
           const SizedBox(height: 25),
         ]),

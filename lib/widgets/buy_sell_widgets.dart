@@ -55,11 +55,12 @@ Widget cononectContainer() {
           const SizedBox(
             width: 10,
           ),
-          const Text(
-            'Binance Connect',
-            style: TextStyle(fontSize: 16),
+          const Expanded(
+            child: Text(
+              'Binance Connect',
+              style: TextStyle(fontSize: 16),
+            ),
           ),
-          const Spacer(),
           Column(
             children: [
               const Text(

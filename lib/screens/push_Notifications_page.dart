@@ -58,9 +58,12 @@ class _PushNotificationPageState extends State<PushNotificationPage> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Row(
                 children: [
-                  const Text(
-                    'Allow Push Notfications',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  const Expanded(
+                    child: Text(
+                      'Allow Push Notfications',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
                   ),
                   const Spacer(),
                   Transform.scale(
@@ -89,9 +92,12 @@ class _PushNotificationPageState extends State<PushNotificationPage> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Row(
                 children: [
-                  const Text(
-                    'Sent And Receive',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  const Expanded(
+                    child: Text(
+                      'Sent And Receive',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
                   ),
                   const Spacer(),
                   Transform.scale(
